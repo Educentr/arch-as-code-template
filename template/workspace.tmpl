@@ -1,0 +1,15 @@
+workspace "%Company% architect landscape" "The architectual landscape of %Company%" {
+    model {
+        !include model/person.dsl
+        !include model/software_system_group.dsl
+        !include model/relationship.dsl
+    }
+
+    views {
+        !include views
+        !include style/styles.dsl
+    }
+    !adrs adrs
+
+    !script scripts/views.groovy
+}

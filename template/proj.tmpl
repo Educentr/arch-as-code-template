@@ -1,0 +1,16 @@
+systemContext s_%SYSTEM% "%PROJ%_ctx" {
+    include "element.tag==%PROJ%"
+    exclude "relationship.tag!=%PROJ%"
+    exclude "relationship.tag==Relation: Container"
+    autoLayout
+}
+
+container s_%SYSTEM% "%PROJ%" {
+    include element.type==person
+    include element.type==container
+    exclude "element.tag!=%PROJ%"
+    include element.type==softwaresystem
+    exclude "element.tag!=%PROJ%"
+    exclude "relationship.tag!=%PROJ%"
+    autoLayout
+}
