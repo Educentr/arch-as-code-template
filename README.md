@@ -2,20 +2,20 @@
 
 ## Содержание
 
-[1. Введение](#intro)
-[2. Get started](#get-started)
-[3. Инструмент structurizr](#structurizr)
-[4. Объекты structurizr](#structurizr-obj)
-[5. Структура репозитория](#structurizr-repo)
-[6. Правила работы в репозитории](#repo-rule)
-[7. Правила работы с git](#git-rule)
-[8. Работа со structurizr-lite](#structurizr-lite)
+1. [Введение](#intro)
+1. [Get started](#get-started)
+1. [Инструмент structurizr](#structurizr)
+1. [Объекты structurizr](#structurizr-obj)
+1. [Структура репозитория](#structurizr-repo)
+1. [Правила работы в репозитории](#repo-rule)
+1. [Правила работы с git](#git-rule)
+1. [Работа со structurizr-lite](#structurizr-lite)
 
-## <a name="intro"></a>1. Введение
+## <a name="intro"></a>Введение
 
 В компании для описания архитектуры используется подход architecture as a code. Такой подход позволяет гибко управлять архитектурными артефактами и описывать требуемые изменения по архитектуре по проектам. Описание в виде кода освобождает от нужды "рисовать схемы" и описывать уровни модели С4 по отдельности.
 
-## <a name="get-started"></a>2. Начало работы
+## <a name="get-started"></a>Начало работы
 
 ```sh
 git clone https://github.com/Nikolo/arch-as-code-template arch-as-code
@@ -41,8 +41,7 @@ git push origin TASK123-MyNewProject
 # create merge or pull request for review
 ```
 
-
-## <a name="structurizr"></a>2. Инструмент structurizr
+## <a name="structurizr"></a>Инструмент structurizr
 
 Structurizr - это инструмент для визуализации и документирования архитектуры, основанный на [модели С4](https://c4model.com). В качестве языка используется собственный DSL structurizr, официальная [документация](https://github.com/structurizr/dsl/blob/master/docs/language-reference.md)
 
@@ -128,7 +127,7 @@ Software System - это самый высокий уровень абстрак
 - Как контейнеры взаимодействую с внешними системами?
 - Как пользователи взаимодействуют с документируемой системой?
 
-## <a name="structurizr-repo"></a>4. Структура репозитория
+## <a name="structurizr-repo"></a>Структура репозитория
 
 Корневой файл репозитория workspace.dsl, в который импортируются другие файлы через ключевое слово !import
 Таким образом строится общая модель описания на основании древовидной структуры файлов.
@@ -160,7 +159,7 @@ workspace "Project architect landscape" "The architectural landscape of project"
 
 `make init ARGS='-n COMPANY_NAME'`
 
-## <a name="repo-rule"></a>5. Правила работы в репозитории
+## <a name="repo-rule"></a>Правила работы в репозитории
 
 ### Модель (model)
 
@@ -403,7 +402,7 @@ Structurizr позволяет в интерфейсе отображать ар
 
 Structurizr также позволяет вести ADR и отображать их в веб интерфейсе в разделе Decisions на уровне SoftwareSystem и Containers
 
-## <a name="git-rule"></a>6. Правила работы с git
+## <a name="git-rule"></a>Правила работы с git
 
 ### Именование веток
 
@@ -411,7 +410,7 @@ Structurizr также позволяет вести ADR и отображать
 
 Это важно потому, что на основании имени ветки будет производиться раскраска компонентов
 
-## <a name="structurizr-lite"></a>7. Работа со structurizr-lite
+## <a name="structurizr-lite"></a>Работа со structurizr-lite
 
 На данный момент запуск `structurizr-lite` производится при помощи `make run`.
 
