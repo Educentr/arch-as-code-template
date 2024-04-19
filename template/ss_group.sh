@@ -25,7 +25,7 @@ if [ -d "model/software_systems_group/$group_name" ]; then
     exit 1
 fi
 
-mkdir model/software_system_group/$group_name
+mkdir -p model/software_system_group/$group_name
 mkdir model/software_system_group/$group_name/software_system
 touch model/software_system_group/$group_name/software_system/.keep
 mkdir model/software_system_group/$group_name/rel

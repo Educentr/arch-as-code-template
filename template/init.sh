@@ -25,21 +25,24 @@ if [ -f "workspace.dsl" ]; then
     exit 1
 fi
 
-sed 's/%Company%/'$name'/' template/workspace.tmpl > workspace.dsl
+sed 's/%Company%/'$name'/g' template/workspace.tmpl > workspace.dsl
 
 mkdir -p views/PROJ
 touch views/PROJ/.keep
 touch views/container.dsl
 touch views/system_context.dsl
 cp template/system_landscape.tmpl views/system_landscape.dsl
-mkdir -p model/software_system_group/person/rel
-cp template/person.tmpl model/software_system_group/person.dsl
+mkdir -p model/person/rel
+cp template/person.tmpl model/person.dsl
 touch model/software_system_group.dsl
-echo "!include software_system_group/person/rel" > model/relationship.ds
-touch model/software_system_group/person/rel/p_b2b_customer_rel.dsl
-touch model/software_system_group/person/rel/p_b2b_staff_rel.dsl
-touch model/software_system_group/person/rel/p_b2c_customer_rel.dsl
-touch model/software_system_group/person/rel/p_other_rel.dsl
-touch model/software_system_group/person/rel/p_our_staff_rel.dsl
+echo "!include person/rel" > model/relationship.dsl
+touch model/person/rel/p_b2b_customer_rel.dsl
+touch model/person/rel/p_b2b_staff_rel.dsl
+touch model/person/rel/p_b2c_customer_rel.dsl
+touch model/person/rel/p_other_rel.dsl
+touch model/person/rel/p_our_staff_rel.dsl
 mkdir adrs
-cp 0001-record-architecture-solutions.tmpl adrs/0001-record-architecture-solutions.md
+
+DATE=$(date +%Y-%m-%d)
+
+sed 's/%START_DATE%/'$DATE'/' template/0001-record-architecture-solutions.tmpl > adrs/0001-record-architecture-solutions.md

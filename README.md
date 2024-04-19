@@ -3,16 +3,44 @@
 ## Содержание
 
 [1. Введение](#intro)
-[2. Инструмент structurizr](#structurizr)
-[3. Объекты structurizr](#structurizr-obj)
-[4. Структура репозитория](#structurizr-repo)
-[5. Правила работы в репозитории](#repo-rule)
-[6. Правила работы с git](#git-rule)
-[7. Работа со structurizr-lite](#structurizr-lite)
+[2. Get started](#get-started)
+[3. Инструмент structurizr](#structurizr)
+[4. Объекты structurizr](#structurizr-obj)
+[5. Структура репозитория](#structurizr-repo)
+[6. Правила работы в репозитории](#repo-rule)
+[7. Правила работы с git](#git-rule)
+[8. Работа со structurizr-lite](#structurizr-lite)
 
 ## <a name="intro"></a>1. Введение
 
 В компании для описания архитектуры используется подход architecture as a code. Такой подход позволяет гибко управлять архитектурными артефактами и описывать требуемые изменения по архитектуре по проектам. Описание в виде кода освобождает от нужды "рисовать схемы" и описывать уровни модели С4 по отдельности.
+
+## <a name="get-started"></a>2. Начало работы
+
+```sh
+git clone https://github.com/Nikolo/arch-as-code-template arch-as-code
+cd arch-as-code
+make init ARGS="-n MyCompanyName"
+make ss_group ARGS="-n Widget"
+make ss_group ARGS="-n Backoffice"
+make ss_group ARGS="-n Core"
+git remote rename origin origin-template
+git remote add origin git@......
+git add .
+git commit -m'Initial project'
+git push origin
+git checkout -b TASK-123_MyNewProject
+make proj ARGS='-s backoffice_fetcher'
+#edit files
+make run
+# open 127.0.0.1:8080 in browser
+# check results
+git add .
+git commit -m'My new project purpose'
+git push origin TASK123-MyNewProject
+# create merge or pull request for review
+```
+
 
 ## <a name="structurizr"></a>2. Инструмент structurizr
 
